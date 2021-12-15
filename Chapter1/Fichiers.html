@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.9. Fichiers &#8212; Bases de Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.10. Modules" href="Modules.html" />
+    <link rel="prev" title="1.8. Classes" href="Classes.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Bases de Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Bases de Python pour le Data Scientist
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter1.html">
+   1. Méthodes intégrées de Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Syntaxe_de_Base.html">
+     1.1. Syntaxe de base
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="String.html">
+     1.2. Les chaînes de caractères (String : str)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Listes.html">
+     1.3. Les listes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tuples.html">
+     1.4. Les Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Dictionnaires.html">
+     1.5. Les dictionnaires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="StructuresControle.html">
+     1.6. Structures de contrôle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fonctions.html">
+     1.7. Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Classes.html">
+     1.8. Classes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.9. Fichiers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Modules.html">
+     1.10. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="References.html">
+     1.11. Quelques liens
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3.html">
+   2. NumPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Numpy.html">
+     2.1. Numpy (tableaux de données multi-dimensionnels)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4.html">
+   3. Matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/Matplotlib_visualisation.html">
+     3.1. Matplotlib (visualisation en 2D et 3D pour Python)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5.html">
+   4. Scipy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/Scipy.html">
+     4.1. SciPy - Librairie d’algorithmes pour le calcul scientifique en Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter6/Chapter6.html">
+   5. Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/Pandas.html">
+     5.1. Pandas en 10 minutes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Chapter1/Fichiers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/EssayF/Bases_de_Python"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/EssayF/Bases_de_Python/issues/new?title=Issue%20on%20page%20%2FChapter1/Fichiers.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/EssayF/Bases_de_Python/master?urlpath=tree/./Chapter1/Fichiers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/EssayF/Bases_de_Python/blob/master/./Chapter1/Fichiers.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="lancement Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-dans-un-fichier-texte">
+   1.9.1. Lecture dans un fichier texte
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methodes-seek-et-tell">
+     1.9.1.1. Méthodes seek() et tell()**
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterations-directement-sur-le-fichier">
+     1.9.1.2. Itérations directement sur le fichier**
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecriture-dans-un-fichier-texte">
+   1.9.2. Ecriture dans un fichier texte
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lecture-et-ecriture-d-un-fichier-csv">
+   1.9.3. Lecture et ecriture d’un fichier CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methode-optimisee-douverture-et-de-fermeture-de-fichier">
+   1.9.4. Méthode optimisée d’ouverture et de fermeture de fichier
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="fichiers">
+<h1><span class="section-number">1.9. </span>Fichiers<a class="headerlink" href="#fichiers" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table des matières</span>
+
+<span class="kn">from</span> <span class="nn">jyquickhelper</span> <span class="kn">import</span> <span class="n">add_notebook_menu</span>
+<span class="n">add_notebook_menu</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="my_id_menu_nb">run previous cell, wait for 2 seconds</div>
+<script>
+function repeat_indent_string(n){
+    var a = "" ;
+    for ( ; n > 0 ; --n)
+        a += "    ";
+    return a;
+}
+// look up into all sections and builds an automated menu //
+var update_menu_string = function(begin, lfirst, llast, sformat, send, keep_item, begin_format, end_format) {
+    var anchors = document.getElementsByClassName("section");
+    if (anchors.length == 0) {
+        anchors = document.getElementsByClassName("text_cell_render rendered_html");
+    }
+    var i,t;
+    var text_menu = begin;
+    var text_memo = "<pre>\nlength:" + anchors.length + "\n";
+    var ind = "";
+    var memo_level = 1;
+    var href;
+    var tags = [];
+    var main_item = 0;
+    var format_open = 0;
+    for (i = 0; i <= llast; i++)
+        tags.push("h" + i);
+
+    for (i = 0; i < anchors.length; i++) {
+        text_memo += "**" + anchors[i].id + "--\n";
+
+        var child = null;
+        for(t = 0; t < tags.length; t++) {
+            var r = anchors[i].getElementsByTagName(tags[t]);
+            if (r.length > 0) {
+child = r[0];
+break;
+            }
+        }
+        if (child == null) {
+            text_memo += "null\n";
+            continue;
+        }
+        if (anchors[i].hasAttribute("id")) {
+            // when converted in RST
+            href = anchors[i].id;
+            text_memo += "#1-" + href;
+            // passer à child suivant (le chercher)
+        }
+        else if (child.hasAttribute("id")) {
+            // in a notebook
+            href = child.id;
+            text_memo += "#2-" + href;
+        }
+        else {
+            text_memo += "#3-" + "*" + "\n";
+            continue;
+        }
+        var title = child.textContent;
+        var level = parseInt(child.tagName.substring(1,2));
+
+        text_memo += "--" + level + "?" + lfirst + "--" + title + "\n";
+
+        if ((level < lfirst) || (level > llast)) {
+            continue ;
+        }
+        if (title.endsWith('¶')) {
+            title = title.substring(0,title.length-1).replace("<", "&lt;")
+         .replace(">", "&gt;").replace("&", "&amp;");
+        }
+        if (title.length == 0) {
+            continue;
+        }
+
+        while (level < memo_level) {
+            text_menu += end_format + "</ul>\n";
+            format_open -= 1;
+            memo_level -= 1;
+        }
+        if (level == lfirst) {
+            main_item += 1;
+        }
+        if (keep_item != -1 && main_item != keep_item + 1) {
+            // alert(main_item + " - " + level + " - " + keep_item);
+            continue;
+        }
+        while (level > memo_level) {
+            text_menu += "<ul>\n";
+            memo_level += 1;
+        }
+        text_menu += repeat_indent_string(level-2);
+        text_menu += begin_format + sformat.replace("__HREF__", href).replace("__TITLE__", title);
+        format_open += 1;
+    }
+    while (1 < memo_level) {
+        text_menu += end_format + "</ul>\n";
+        memo_level -= 1;
+        format_open -= 1;
+    }
+    text_menu += send;
+    //text_menu += "\n" + text_memo;
+
+    while (format_open > 0) {
+        text_menu += end_format;
+        format_open -= 1;
+    }
+    return text_menu;
+};
+var update_menu = function() {
+    var sbegin = "";
+    var sformat = '<a href="#__HREF__">__TITLE__</a>';
+    var send = "";
+    var begin_format = '<li>';
+    var end_format = '</li>';
+    var keep_item = -1;
+    var text_menu = update_menu_string(sbegin, 2, 4, sformat, send, keep_item,
+       begin_format, end_format);
+    var menu = document.getElementById("my_id_menu_nb");
+    menu.innerHTML=text_menu;
+};
+window.setTimeout(update_menu,2000);
+            </script></div></div>
+</div>
+<p>L’écriture et la lecture dans un fichier s’effectuent toujours de la même manière. On ouvre le fichier
+en mode écriture ou lecture, on écrit ou on lit, puis on ferme le fichier, le laissant disponible pour une
+utilisation ultérieure. Ce paragraphe ne présente pas l’écriture ou la lecture dans un format binaire
+car celle-ci est peu utilisée dans ce langage.</p>
+<p>Dans cette partie, on prend l’exemple d’un fichier <em>SerieTV.txt</em> ayant le contenu suivant :</p>
+<p>walking dead</p>
+<p>Black Mirror</p>
+<p>Narcos</p>
+<p>Game of Thrones</p>
+<div class="section" id="lecture-dans-un-fichier-texte">
+<h2><span class="section-number">1.9.1. </span>Lecture dans un fichier texte<a class="headerlink" href="#lecture-dans-un-fichier-texte" title="Permalink to this headline">¶</a></h2>
+<p>La lecture dans un fichier texte s’effectue selon le même schéma :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;files/SerieTV.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1">#f = open(&#39; nom_du_fichier.txt &#39;,&#39;r&#39;)</span>
+<span class="n">lignes</span> <span class="o">=</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span> <span class="p">()</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Ouverture du fichier : open(nom,mode)</p>
+<ul>
+<li><p>nom : chaîne de caractère, nom du fichier</p></li>
+<li><p>mode : chaîne de caractères, accès au fichier
+(’r’ : read, ’w’ : write, ’a’ : append)</p></li>
+</ul>
+</li>
+<li><p>Lecture ligne par ligne ; La ligne est affectée à une variable texte</p></li>
+<li><p>Principales méthodes :</p>
+<ul>
+<li><p>read() Lit tout le fichier (jusqu’à EOF) et renvoie un str</p></li>
+<li><p>read(n) Lit n caractères du fichier à partir de la position courante</p></li>
+<li><p>readline() Lit une ligne du fichier jusqu’à nn et renvoie la chaîne</p></li>
+<li><p>readlines() Lit toutes les lignes du fichier, renvoie un objet list</p></li>
+</ul>
+</li>
+<li><p>Fermeture du fichier</p></li>
+</ul>
+<div class="section" id="methodes-seek-et-tell">
+<h3><span class="section-number">1.9.1.1. </span>Méthodes seek() et tell()**<a class="headerlink" href="#methodes-seek-et-tell" title="Permalink to this headline">¶</a></h3>
+<p>Les méthodes <strong>seek()</strong> et <strong>tell()</strong> permettent respectivement de se déplacer au n ième caractère (plus exactement au n ième octet) d’un fichier et d’afficher où en est la lecture du fichier,
+c’est-à-dire quel caractère (ou octet) est en train d’être lu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;files/SerieTV.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="s1">&#39;walking dead</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+<span class="mi">14</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+<span class="mi">0</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="s1">&#39;walking dead</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="s1">&#39;Black Mirror </span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">f1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>On remarque qu’à l’ouverture d’un fichier, le tout premier caractère est indexé par 0 (tout comme le premier élément d’une liste). La méthode seek() permet facilement
+de remonter au début du fichier lorsque l’on est arrivé à la fin ou lorsqu’on en a lu une partie.</p>
+</div>
+<div class="section" id="iterations-directement-sur-le-fichier">
+<h3><span class="section-number">1.9.1.2. </span>Itérations directement sur le fichier**<a class="headerlink" href="#iterations-directement-sur-le-fichier" title="Permalink to this headline">¶</a></h3>
+<p>Il existe également un moyen à la fois simple et élégant
+de parcourir un fichier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;files/SerieTV.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">f1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+    
+
+<span class="n">f1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Game of Thrones
+
+Breaking Bad
+
+The Walking Dead
+
+Dexter
+
+7Affiche Friends
+
+Friends
+
+House of Cards
+
+Lost, les disparus
+</pre></div>
+</div>
+</div>
+</div>
+<p>La boucle <strong>for</strong> va demander à Python d’aller lire le fichier ligne par ligne.</p>
+</div>
+</div>
+<div class="section" id="ecriture-dans-un-fichier-texte">
+<h2><span class="section-number">1.9.2. </span>Ecriture dans un fichier texte<a class="headerlink" href="#ecriture-dans-un-fichier-texte" title="Permalink to this headline">¶</a></h2>
+<p>La syntaxe d’écriture dans un fichier est la suivante :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span> <span class="p">(</span><span class="s2">&quot;nom-fichier.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="c1"># ouverture en mode écriture &quot;w&quot; ou écriture ajout &quot;a&quot;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot; Bonjour&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;Comment tu vas ?&quot;</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span> <span class="n">s</span> <span class="p">)</span> <span class="c1"># écriture de la chaîne de caractères s</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span> <span class="p">(</span> <span class="n">s2</span> <span class="p">)</span> <span class="c1"># écriture de la chaîne de caractères s2</span>
+<span class="c1">#...</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span> <span class="p">()</span> <span class="c1"># fermeture</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Certains codes sont très utiles lors de l’écriture de fichiers texte comme :</p>
+<p>– <strong>\n</strong> : passage à la ligne</p>
+<p>– <strong>\t</strong> : insertion d’une tabulation, indique un passage à la colonne suivante dans le logiciel Excel</p>
+</div>
+<div class="section" id="lecture-et-ecriture-d-un-fichier-csv">
+<h2><span class="section-number">1.9.3. </span>Lecture et ecriture d’un fichier CSV<a class="headerlink" href="#lecture-et-ecriture-d-un-fichier-csv" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="k">def</span> <span class="nf">read_csv_file</span> <span class="p">(</span> <span class="n">filename</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Lire un fichier CSV et ecrire chaque ligne sous</span>
+<span class="sd">    forme de liste &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="n">filename</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span> <span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">row</span> <span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span> <span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="k">def</span> <span class="nf">read_csv_file1</span> <span class="p">(</span> <span class="n">filename</span> <span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Lire un fichier CSV et ajouter les elements a la liste . &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span> <span class="n">filename</span> <span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span> <span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span> <span class="n">row</span> <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">csv</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="s1">&#39;Nom&#39;</span><span class="p">,</span> <span class="s1">&#39;Notes&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;2016/1/18&#39;</span><span class="p">,</span> <span class="s1">&#39;Martin Luther King Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Federal Holiday&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;2016/2/2&#39;</span><span class="p">,</span><span class="s1">&#39;Groundhog Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Observance&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;2016/2/8&#39;</span><span class="p">,</span><span class="s1">&#39;Chinese New Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Observance&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;2016/2/14&#39;</span><span class="p">,</span><span class="s1">&#39;Valentine</span><span class="se">\&#39;</span><span class="s1">s Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Obervance&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;2016/5/8&#39;</span><span class="p">,</span><span class="s1">&#39;Mother</span><span class="se">\&#39;</span><span class="s1">s Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Observance&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;2016/8/19&#39;</span><span class="p">,</span><span class="s1">&#39;Statehood Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Hawaii Holiday&#39;</span><span class="p">],</span>
+         <span class="p">[</span><span class="s1">&#39;2016/10/28&#39;</span><span class="p">,</span><span class="s1">&#39;Nevada Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Nevada Holiday&#39;</span><span class="p">]]</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+        <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="methode-optimisee-douverture-et-de-fermeture-de-fichier">
+<h2><span class="section-number">1.9.4. </span>Méthode optimisée d’ouverture et de fermeture de fichier<a class="headerlink" href="#methode-optimisee-douverture-et-de-fermeture-de-fichier" title="Permalink to this headline">¶</a></h2>
+<p>Depuis la version 2.5, Python introduit le mot-clé <strong>with</strong> qui permet d’ouvrir et fermer un
+fichier de manière commode. Si pour une raison ou une autre l’ouverture conduit à une erreur (problème de droits, etc), l’utilisation de <strong>with</strong> garantit la bonne fermeture du fichier (ce
+qui n’est pas le cas avec l’utilisation de la méthode open() invoquée telle quelle). Voici un
+exemple :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;files/SerieTV.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">f1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Game of Thrones
+
+Breaking Bad
+
+The Walking Dead
+
+Dexter
+
+7Affiche Friends
+
+Friends
+
+House of Cards
+
+Lost, les disparus
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vous remarquez que <strong>with</strong> introduit un bloc d’indentation. C’est à l’intérieur de ce bloc que
+nous effectuons toutes les opérations sur le fichier. Une fois sorti, Python fermera automatiquement le fichier. Vous n’avez donc plus besoin d’invoquer la fonction close().</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Chapter1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Classes.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1.8. </span>Classes</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Modules.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.10. </span>Modules</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Par Farah AIT SALAHT<br/>
+        
+            &copy; droits d'auteur 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
