@@ -1,0 +1,37 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README.md
+options:  
+  numbered: True
+
+chapters:
+- file: Chapter1/Chapter1.md
+  sections:
+  - file: Chapter1/Syntaxe_de_Base.ipynb
+  - file: Chapter1/String.ipynb
+  - file: Chapter1/Listes.ipynb
+  - file: Chapter1/Tuples.ipynb
+  - file: Chapter1/Dictionnaires.ipynb
+  - file: Chapter1/StructuresControle.ipynb
+  - file: Chapter1/Fonctions.ipynb
+  - file: Chapter1/Classes.ipynb
+  - file: Chapter1/Fichiers.ipynb
+  - file: Chapter1/Modules.ipynb
+  - file: Chapter1/References.ipynb
+- file: Chapter3/Chapter3.md
+  sections:
+  - file: Chapter3/Numpy.ipynb
+- file: Chapter4/Chapter4.md
+  sections:
+  - file: Chapter4/Matplotlib_visualisation.ipynb
+- file: Chapter5/Chapter5.md
+  sections:
+  - file: Chapter5/Scipy.ipynb
+- file: Chapter6/Chapter6.md
+  sections:
+  - file: Chapter6/Pandas.ipynb
+  
+
+

@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2. Les chaînes de caractères (String : str) &#8212; Bases de Python</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.3. Les listes" href="Listes.html" />
+    <link rel="prev" title="1.1. Syntaxe de base" href="Syntaxe_de_Base.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Bases de Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Bases de Python pour le Data Scientist
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Chapter1.html">
+   1. Méthodes intégrées de Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Syntaxe_de_Base.html">
+     1.1. Syntaxe de base
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.2. Les chaînes de caractères (String : str)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Listes.html">
+     1.3. Les listes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tuples.html">
+     1.4. Les Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Dictionnaires.html">
+     1.5. Les dictionnaires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="StructuresControle.html">
+     1.6. Structures de contrôle
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fonctions.html">
+     1.7. Fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Classes.html">
+     1.8. Classes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Fichiers.html">
+     1.9. Fichiers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Modules.html">
+     1.10. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="References.html">
+     1.11. Quelques liens
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter3/Chapter3.html">
+   2. NumPy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter3/Numpy.html">
+     2.1. Numpy (tableaux de données multi-dimensionnels)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter4/Chapter4.html">
+   3. Matplotlib
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter4/Matplotlib_visualisation.html">
+     3.1. Matplotlib (visualisation en 2D et 3D pour Python)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter5/Chapter5.html">
+   4. Scipy
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter5/Scipy.html">
+     4.1. SciPy - Librairie d’algorithmes pour le calcul scientifique en Python
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Chapter6/Chapter6.html">
+   5. Pandas
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Chapter6/Pandas.html">
+     5.1. Pandas en 10 minutes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Chapter1/String.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/EssayF/Bases_de_Python"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/EssayF/Bases_de_Python/issues/new?title=Issue%20on%20page%20%2FChapter1/String.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/EssayF/Bases_de_Python/master?urlpath=tree/./Chapter1/String.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/EssayF/Bases_de_Python/blob/master/./Chapter1/String.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="lancement Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syntaxe">
+   1.2.1. Syntaxe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caractere-d-echappement">
+   1.2.2. Caractère d’échappement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operations-sur-les-caracteres">
+   1.2.3. Opérations sur les caractères
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#methodes-sur-les-caracteres">
+   1.2.4. Méthodes sur les caractères
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-trouver-l-index-d-une-sous-chaine-dans-une-chaine-de-caracteres">
+     1.2.4.1. find: Trouver l’index d’une sous-chaîne dans une chaîne de caractères
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#re-sub-remplacer-une-chaine-par-une-autre-chaine-a-l-aide-d-une-expression-reguliere">
+     1.2.4.2. re.sub : Remplacer une chaîne par une autre chaîne à l’aide d’une expression régulière
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difflib-sequencematcher-detecter-les-articles-presque-similaires">
+     1.2.4.3. difflib.SequenceMatcher : Détecter les articles “presque similaires
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#difflib-get-close-matches-obtenir-une-liste-des-meilleures-correspondances-pour-un-certain-mot">
+     1.2.4.4. difflib.get_close_matches : Obtenir une liste des meilleures correspondances pour un certain mot
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="les-chaines-de-caracteres-string-str">
+<h1><span class="section-number">1.2. </span>Les chaînes de caractères (String : str)<a class="headerlink" href="#les-chaines-de-caracteres-string-str" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Afficher la table des matières</span>
+
+<span class="kn">from</span> <span class="nn">jyquickhelper</span> <span class="kn">import</span> <span class="n">add_notebook_menu</span>
+<span class="n">add_notebook_menu</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="my_id_menu_nb">run previous cell, wait for 2 seconds</div>
+<script>
+function repeat_indent_string(n){
+    var a = "" ;
+    for ( ; n > 0 ; --n)
+        a += "    ";
+    return a;
+}
+// look up into all sections and builds an automated menu //
+var update_menu_string = function(begin, lfirst, llast, sformat, send, keep_item, begin_format, end_format) {
+    var anchors = document.getElementsByClassName("section");
+    if (anchors.length == 0) {
+        anchors = document.getElementsByClassName("text_cell_render rendered_html");
+    }
+    var i,t;
+    var text_menu = begin;
+    var text_memo = "<pre>\nlength:" + anchors.length + "\n";
+    var ind = "";
+    var memo_level = 1;
+    var href;
+    var tags = [];
+    var main_item = 0;
+    var format_open = 0;
+    for (i = 0; i <= llast; i++)
+        tags.push("h" + i);
+
+    for (i = 0; i < anchors.length; i++) {
+        text_memo += "**" + anchors[i].id + "--\n";
+
+        var child = null;
+        for(t = 0; t < tags.length; t++) {
+            var r = anchors[i].getElementsByTagName(tags[t]);
+            if (r.length > 0) {
+child = r[0];
+break;
+            }
+        }
+        if (child == null) {
+            text_memo += "null\n";
+            continue;
+        }
+        if (anchors[i].hasAttribute("id")) {
+            // when converted in RST
+            href = anchors[i].id;
+            text_memo += "#1-" + href;
+            // passer à child suivant (le chercher)
+        }
+        else if (child.hasAttribute("id")) {
+            // in a notebook
+            href = child.id;
+            text_memo += "#2-" + href;
+        }
+        else {
+            text_memo += "#3-" + "*" + "\n";
+            continue;
+        }
+        var title = child.textContent;
+        var level = parseInt(child.tagName.substring(1,2));
+
+        text_memo += "--" + level + "?" + lfirst + "--" + title + "\n";
+
+        if ((level < lfirst) || (level > llast)) {
+            continue ;
+        }
+        if (title.endsWith('¶')) {
+            title = title.substring(0,title.length-1).replace("<", "&lt;")
+         .replace(">", "&gt;").replace("&", "&amp;");
+        }
+        if (title.length == 0) {
+            continue;
+        }
+
+        while (level < memo_level) {
+            text_menu += end_format + "</ul>\n";
+            format_open -= 1;
+            memo_level -= 1;
+        }
+        if (level == lfirst) {
+            main_item += 1;
+        }
+        if (keep_item != -1 && main_item != keep_item + 1) {
+            // alert(main_item + " - " + level + " - " + keep_item);
+            continue;
+        }
+        while (level > memo_level) {
+            text_menu += "<ul>\n";
+            memo_level += 1;
+        }
+        text_menu += repeat_indent_string(level-2);
+        text_menu += begin_format + sformat.replace("__HREF__", href).replace("__TITLE__", title);
+        format_open += 1;
+    }
+    while (1 < memo_level) {
+        text_menu += end_format + "</ul>\n";
+        memo_level -= 1;
+        format_open -= 1;
+    }
+    text_menu += send;
+    //text_menu += "\n" + text_memo;
+
+    while (format_open > 0) {
+        text_menu += end_format;
+        format_open -= 1;
+    }
+    return text_menu;
+};
+var update_menu = function() {
+    var sbegin = "";
+    var sformat = '<a href="#__HREF__">__TITLE__</a>';
+    var send = "";
+    var begin_format = '<li>';
+    var end_format = '</li>';
+    var keep_item = -1;
+    var text_menu = update_menu_string(sbegin, 2, 4, sformat, send, keep_item,
+       begin_format, end_format);
+    var menu = document.getElementById("my_id_menu_nb");
+    menu.innerHTML=text_menu;
+};
+window.setTimeout(update_menu,2000);
+            </script></div></div>
+</div>
+<p>Les chaînes sont le type de variable utilisé pour stocker des messages texte.</p>
+<div class="section" id="syntaxe">
+<h2><span class="section-number">1.2.1. </span>Syntaxe<a class="headerlink" href="#syntaxe" title="Permalink to this headline">¶</a></h2>
+<p><strong>Trois syntaxes :</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  1- simples quotes : &#39;Bonjour, dit-elle&#39;
+
+  2- doubles quotes : &quot;Que se passe t&#39;il ?&quot;
+
+  3- triple quotes (simples ou doubles) : &#39;&#39;&#39;chaînes multilignes&#39;&#39;&#39;
+</pre></div>
+</div>
+<p>Passage à la ligne : Ligne 1 \n Ligne 2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Bonjour&quot;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="caractere-d-echappement">
+<h2><span class="section-number">1.2.2. </span>Caractère d’échappement<a class="headerlink" href="#caractere-d-echappement" title="Permalink to this headline">¶</a></h2>
+<p>Le symbole \ permet :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* \n : un saut de ligne
+* \t : une tabulation
+* \&#39; : le « &#39; », permet de ne pas fermer la chaine de caractères, eg., &#39;aujourd\&#39;hui&#39;
+* \&quot; : le « &quot; », permet de ne pas fermer la chaine de caractères, eg. &quot; Bonjour \&quot;Pierre\&quot; &quot;
+* \\ est un « \ »
+</pre></div>
+</div>
+</div>
+<div class="section" id="operations-sur-les-caracteres">
+<h2><span class="section-number">1.2.3. </span>Opérations sur les caractères<a class="headerlink" href="#operations-sur-les-caracteres" title="Permalink to this headline">¶</a></h2>
+<p>Comme n’importe quelle séquence, les chaînes de caractères supportent :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- le test d’appartenance, la concaténation, la répétition,
+- la taille, le plus petit/plus grand élément,..
+</pre></div>
+</div>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Operation</p></th>
+<th class="text-align:center head"><p>Rôle</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>ch1+ch2</p></td>
+<td class="text-align:center"><p>Concatène (colle l’une à la suite de l’autre) les chaines ch1 et ch2.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>ch1 * n ou n *c h1</p></td>
+<td class="text-align:center"><p>Concatène n fois la chaine ch1.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># concaténation</span>
+<span class="n">phrase</span> <span class="o">=</span> <span class="s1">&#39;Bienvenue &#39;</span><span class="o">+</span> <span class="s1">&#39;à l</span><span class="se">\&#39;</span><span class="s1">ENSAI&#39;</span>   
+
+<span class="c1"># Longueur de la chaîne: le nombre de caractères</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">phrase</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># test d’appartenance à la chaîne</span>
+<span class="s1">&#39;u&#39;</span> <span class="ow">in</span> <span class="n">phrase</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Determine la position du mot &quot;ENSAI&quot; dans la chaîne de caractères &quot;phrase&quot; </span>
+<span class="n">phrase</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;ENSAI&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+</pre></div>
+</div>
+</div>
+</div>
+<p>En tant que séquence,</p>
+<ul class="simple">
+<li><p>on peut accéder aux éléments de la chaîne par leur index en utilisant <strong>[index]</strong>. <em>Note :</em> Les index sont utilisés de 0 à (n-1)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;B&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Il est possible d’indéxer en partant de la fin avec des indices négatifs :</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;r&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>On peut extraire une partie d’une chaîne en utilisant la syntaxe <strong>[start: stop]</strong>, qui extrait les caractères entre index start et stop -1 (le caractère à l’index stop n’est pas inclus):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bonjour&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Si nous omettons l’index start ou stop  (ou les deux) de [start: stop], la valeur par défaut est le début et la fin de la chaîne, respectivement :</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bonj&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">14</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bonjour&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Nous pouvons également définir “le pas (step)” en utilisant la syntaxe [start: end: step] (la valeur par défaut pour step est 1, comme nous l’avons vu ci-dessus) :</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Bjr&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cette technique est appelée Slicing. Pour en savoir plus sur la syntaxe, cliquez ici: ‘<a class="reference external" href="http://docs.python.org/release/2.7.3/library/functions.html?highlight=slice#slice">http://docs.python.org/release/2.7.3/library/functions.html?highlight=slice#slice</a>’</p>
+<p>Python possède un ensemble très riche de fonctions pour le traitement de texte. Voir par exemple ‘<a class="reference external" href="http://docs.python.org/2/library/string.html">http://docs.python.org/2/library/string.html</a>’ pour plus d’informations.</p>
+<p>Parmi les fonctions les plus souvent utilisées sur les chaînes on cite :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Méthode</p></th>
+<th class="head"><p>Rôle</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>strip, lstrip, rstrip</p></td>
+<td><p>Élimine les espaces</p></td>
+</tr>
+<tr class="row-odd"><td><p>split</p></td>
+<td><p>Découpe (en une liste)</p></td>
+</tr>
+<tr class="row-even"><td><p>join</p></td>
+<td><p>Recolle une liste de chaînes</p></td>
+</tr>
+<tr class="row-odd"><td><p>find</p></td>
+<td><p>Recherche une sous-chaîne</p></td>
+</tr>
+<tr class="row-even"><td><p>replace</p></td>
+<td><p>Remplace une sous-chaîne</p></td>
+</tr>
+<tr class="row-odd"><td><p>upper, lower</p></td>
+<td><p>Renvoie la chaine en majuscules, miniscules</p></td>
+</tr>
+<tr class="row-even"><td><p>capitalize</p></td>
+<td><p>Renvoie la chaine avec la première lettre en majuscule</p></td>
+</tr>
+<tr class="row-odd"><td><p>count</p></td>
+<td><p>Renvoie le nombre d’occurence</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="methodes-sur-les-caracteres">
+<h2><span class="section-number">1.2.4. </span>Méthodes sur les caractères<a class="headerlink" href="#methodes-sur-les-caracteres" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="find-trouver-l-index-d-une-sous-chaine-dans-une-chaine-de-caracteres">
+<h3><span class="section-number">1.2.4.1. </span>find: Trouver l’index d’une sous-chaîne dans une chaîne de caractères<a class="headerlink" href="#find-trouver-l-index-d-une-sous-chaine-dans-une-chaine-de-caracteres" title="Permalink to this headline">¶</a></h3>
+<p>Si vous voulez trouver l’indice d’une sous-chaîne dans une chaîne de caractères, utilisez la méthode <code class="docutils literal notranslate"><span class="pre">find()</span></code>.
+Cette méthode renvoie l’indice de la première occurrence de la sous-chaîne si elle est trouvée et <code class="docutils literal notranslate"><span class="pre">-1</span></code> sinon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span> <span class="o">=</span> <span class="s2">&quot;Bonjour je m&#39;appelle Pierre&quot;</span>
+
+<span class="c1"># Trouver l&#39;index de la première occurrence de la sous-chaîne.</span>
+<span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Pierre&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Marie&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vous pouvez également indiquer la position de départ et de fin de la recherche :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Commence la cherche de la sous-chaîne à partir de l&#39;index 7</span>
+<span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Pierre&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Commence la cherche de la sous-chaîne à partir de l&#39;index 7 et prend fin à l&#39;index 18</span>
+<span class="n">phrase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="re-sub-remplacer-une-chaine-par-une-autre-chaine-a-l-aide-d-une-expression-reguliere">
+<h3><span class="section-number">1.2.4.2. </span>re.sub : Remplacer une chaîne par une autre chaîne à l’aide d’une expression régulière<a class="headerlink" href="#re-sub-remplacer-une-chaine-par-une-autre-chaine-a-l-aide-d-une-expression-reguliere" title="Permalink to this headline">¶</a></h3>
+<p>Si vous souhaitez remplacer une chaîne de caractères par une autre ou modifier l’ordre des caractères dans une chaîne, utilisez <code class="docutils literal notranslate"><span class="pre">re.sub</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">re.sub</span></code> vous permet d’utiliser une expression régulière pour spécifier le motif de la chaîne de caractères que vous souhaitez remplacer.</p>
+<p>Dans le code ci-dessous, on remplace <strong>12/12/2018</strong> par <code class="docutils literal notranslate"><span class="pre">mardi</span></code> et on remplace <strong>12/12/2018</strong> par <code class="docutils literal notranslate"><span class="pre">2018/12/12</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">texte</span> <span class="o">=</span> <span class="s2">&quot;Cours d&#39;anglais le 12/12/2018&quot;</span>
+<span class="n">concordance</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(\d+)/(\d+)/(\d+)&quot;</span>
+
+<span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">concordance</span><span class="p">,</span> <span class="s2">&quot;mardi&quot;</span><span class="p">,</span> <span class="n">texte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Cours d&#39;anglais le mardi&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">concordance</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;\3/\1/\2&quot;</span><span class="p">,</span> <span class="n">texte</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Cours d&#39;anglais le 2018/12/12&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="difflib-sequencematcher-detecter-les-articles-presque-similaires">
+<h3><span class="section-number">1.2.4.3. </span>difflib.SequenceMatcher : Détecter les articles “presque similaires<a class="headerlink" href="#difflib-sequencematcher-detecter-les-articles-presque-similaires" title="Permalink to this headline">¶</a></h3>
+<p>Lors de l’analyse d’articles, différents articles peuvent être presque similaires mais pas identiques à 100 %, peut-être à cause de la grammaire ou du changement de deux ou trois mots (comme le postage croisé).</p>
+<p>Comment détecter les articles “presque similaires” et en éliminer un ? C’est là que <code class="docutils literal notranslate"><span class="pre">difflib.SequenceMatcher</span></code> peut s’avérer utile.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">difflib</span> <span class="kn">import</span> <span class="n">SequenceMatcher</span>
+
+<span class="n">text1</span> <span class="o">=</span> <span class="s1">&#39;Je rentre du travail&#39;</span>
+<span class="n">text2</span> <span class="o">=</span> <span class="s1">&#39;Je rentre du boulot&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">SequenceMatcher</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">text1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">text2</span><span class="p">)</span><span class="o">.</span><span class="n">ratio</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.717948717948718
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="difflib-get-close-matches-obtenir-une-liste-des-meilleures-correspondances-pour-un-certain-mot">
+<h3><span class="section-number">1.2.4.4. </span>difflib.get_close_matches : Obtenir une liste des meilleures correspondances pour un certain mot<a class="headerlink" href="#difflib-get-close-matches-obtenir-une-liste-des-meilleures-correspondances-pour-un-certain-mot" title="Permalink to this headline">¶</a></h3>
+<p>Si vous voulez obtenir une liste des meilleures correspondances pour un certain mot, utilisez difflib.get_close_matches.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">difflib</span> <span class="kn">import</span> <span class="n">get_close_matches</span>
+
+<span class="n">Fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Pomme&#39;</span><span class="p">,</span> <span class="s1">&#39;Poire&#39;</span><span class="p">,</span><span class="s1">&#39;Peche&#39;</span><span class="p">,</span><span class="s1">&#39;Pruneau&#39;</span><span class="p">,</span><span class="s1">&#39;Fraise&#39;</span><span class="p">]</span>
+<span class="n">get_close_matches</span><span class="p">(</span><span class="s1">&#39;Prune&#39;</span><span class="p">,</span> <span class="n">Fruits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Pruneau&#39;, &#39;Poire&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pour obtenir des correspondances plus proches, augmentez la valeur de l’argument cutoff (par défaut 0.6).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_close_matches</span><span class="p">(</span><span class="s1">&#39;Prune&#39;</span><span class="p">,</span> <span class="n">Fruits</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Pruneau&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Chapter1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Syntaxe_de_Base.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">1.1. </span>Syntaxe de base</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Listes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Les listes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Par Farah AIT SALAHT<br/>
+        
+            &copy; droits d'auteur 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
