@@ -22,7 +22,7 @@ Mon_Tuple [1]=10
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/var/folders/2b/cj2pm60x61s5qlxpmr7g7km00000gn/T/ipykernel_4479/2729588293.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/var/folders/2b/cj2pm60x61s5qlxpmr7g7km00000gn/T/ipykernel_6805/2729588293.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mMon_Tuple[0m [0;34m[[0m[0;36m1[0m[0;34m][0m[0;34m=[0m[0;36m10[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;31mTypeError[0m: 'tuple' object does not support item assignment

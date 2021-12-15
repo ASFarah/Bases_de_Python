@@ -23,7 +23,7 @@ if Instruction1:
     print("l'Instruction1 et l'Instruction2 sont toutes les deux True")  # Cette ligne n'est pas correctement indentée
 ------------------
 
-[0;36m  File [0;32m"/var/folders/2b/cj2pm60x61s5qlxpmr7g7km00000gn/T/ipykernel_4469/510671156.py"[0;36m, line [0;32m4[0m
+[0;36m  File [0;32m"/var/folders/2b/cj2pm60x61s5qlxpmr7g7km00000gn/T/ipykernel_6795/510671156.py"[0;36m, line [0;32m4[0m
 [0;31m    print("l'Instruction1 et l'Instruction2 sont toutes les deux True")  # Cette ligne n'est pas correctement indentée[0m
 [0m    ^[0m
 [0;31mIndentationError[0m[0;31m:[0m expected an indented block
